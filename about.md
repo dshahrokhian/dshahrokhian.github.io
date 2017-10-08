@@ -2,14 +2,10 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
-
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Back in the day, I started my bachelor's with a single goal: to understand how computers work. My passions are Computer Science and Machine Learning. Curiosity drives me through the day, and now I am pursuing to create something relevant to the world.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[daniyal@kth.se](mailto:daniyal@kth.se)
