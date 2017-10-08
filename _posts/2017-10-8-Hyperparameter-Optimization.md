@@ -3,7 +3,6 @@ layout: post
 title: Hyperparameter Optimization in 10 minutes
 published: true
 ---
-
 In contrast to learned parameters, hyper-parameters cannot be directly learned from the training process. In the context of ML, hyper-parameter setting can be seen as model selection. Examples of hyper-parameters in ML models include:
 
 **Learning rate** $\epsilon_t$ determines how quickly the gradient updates follow the direction of the gradient. If the learning rate is too small, the model will converge slowly and might prematurely end in a local minima that is far from optimal. If the learning rate is too large, the model will diverge by overshooting minimas. 
@@ -45,19 +44,13 @@ Optimization techniques tend to have the final goal of minimizing a given functi
 
 A Gaussian process (GP) is a prior distribution of functions in the form $f:X \rightarrow \mathbb{R}$. A GP is defined by the property that any finite set of $N$ points $\{x_n \in X\}^{N}_{n=1}$ induces a multivariate Gaussian distribution on $\mathbb{R}^N$. These models assume that similar inputs give similar outputs. In the case of hyper-parameter optimization, we pick a setting of hyper-parameters such that the improvement with respect to the best setting seen so far is big. The process can be formalized in a set of steps, and understood easier with a single hyper-parameter.
 
-![Bayesian Global Optimization](http://raw.githubusercontent.com/dshahrokhian/dshahrokhian.github.io/master/assets/bayesian.png)
+![Bayesian Global Optimization](http://raw.githubusercontent.com/dshahrokhian/dshahrokhian.github.io/master/_posts/2017-10-8-Hyperparameter-Optimization/bayesian.png)
 
 The plots show the mean and confidence intervals estimated with a probabilistic model of the objective function. Although the objective function is shown, in practice, it is unknown. The plots also show the acquisition functions in the lower shaded plots. The acquisition is high where the model predicts a high objective (exploitation) and where the prediction uncertainty is high (exploration). Note that the area on the far left remains unsampled, as while it has high uncertainty, it is correctly predicted to offer little improvement over the highest observation 
 
-First, we define an objective function and an acquisition function. The objective function $f:X \rightarrow \mathbb{R}$ will react to the hyper-parameter setting and it is considered to be Gaussian distributed. The acquisition function ${a:\mcX\to\reals^{+}}$ determines the strategy to maximize the probability of improving over the best current value. Expected Improvement (EI) has been shown to be better-behaved than other metrics.
+First, we define an objective function and an acquisition function. The objective function $f:X \rightarrow \mathbb{R}$ will react to the hyper-parameter setting and it is considered to be Gaussian distributed. The acquisition function ${a:X \rightarrow \mathbb{R}^{+}}$ determines the strategy to maximize the probability of improving over the best current value. Expected Improvement (EI) has been shown to be better-behaved than other metrics.
 
-\begin{align}
-  a_{EI}(\brmx\aqhist) = \sigma(\brmx\aqhist)
-  \left(
-  \gamma(\brmx)\,\Phi(\gamma(\brmx)) + \distNorm(\gamma(\brmx)\,;\,0,1)
-  \right)
-\end{align}
-
-Second, we sample points in the objective function and update the fit or posterior of the GP. As it can be seen in Figure~\ref{bayesian}, the variance of the GP decreases around the known points, acting as the uncertainty measurement. On the other hand, the EI decreases in those points.
+Second, we sample points in the objective function and update the fit or posterior of the GP. As it can be seen in the Figure, the variance of the GP decreases around the known points, acting as the uncertainty measurement. On the other hand, the EI decreases in those points.
 
 Third, we find the point with the highest EI. We apply the objective function and update the GP, repeating the process with certain convergence tolerance and then returning the best solution.
+
