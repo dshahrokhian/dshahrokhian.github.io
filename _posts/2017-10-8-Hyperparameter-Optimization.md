@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hyperparameter Optimization under 10 minutes
+title: Hyperparameter Optimization in 10 minutes
 published: true
 ---
 
