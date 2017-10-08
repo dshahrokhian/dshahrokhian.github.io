@@ -49,7 +49,7 @@ A Gaussian process (GP) is a prior distribution of functions in the form $f:X \r
 
 In the case of hyper-parameter optimization, we pick a setting of hyper-parameters such that the improvement with respect to the best setting seen so far is big. The process can be formalized in a set of steps, and understood easier with a single hyper-parameter.
 
-![bayesian.png](../bayesian.png)
+![Illustration of Bayesian Global Optimization](https://raw.githubusercontent.com/dshahrokhian/dshahrokhian.github.io/master/_posts/2017-10-8-Hyperparameter-Optimization/bayesian.png)
 
 The plots show the mean and confidence intervals estimated with a probabilistic model of the objective function. Although the objective function is shown, in practice, it is unknown. The plots also show the acquisition functions in the lower shaded plots. The acquisition is high where the model predicts a high objective (exploitation) and where the prediction uncertainty is high (exploration). Note that the area on the far left remains unsampled, as while it has high uncertainty, it is correctly predicted to offer little improvement over the highest observation 
 
