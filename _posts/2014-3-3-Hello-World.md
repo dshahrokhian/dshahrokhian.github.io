@@ -6,7 +6,7 @@ published: true
 
 In contrast to learned parameters, hyper-parameters cannot be directly learned from the training process. In the context of ML, hyper-parameter setting can be seen as model selection. Examples of hyper-parameters in ML models include:
 
-\textbf{Learning rate} \epsilon determines how quickly the gradient updates follow the direction of the gradient. If the learning rate is too small, the model will converge slowly and might prematurely end in a local minima that is far from optimal. If the learning rate is too large, the model will diverge by overshooting minimas. 
+\textbf{Learning rate} $$\epsilon_t$$ determines how quickly the gradient updates follow the direction of the gradient. If the learning rate is too small, the model will converge slowly and might prematurely end in a local minima that is far from optimal. If the learning rate is too large, the model will diverge by overshooting minimas. 
 
 Furthermore, the learning rate is typically decreased over time. One approach is to set $\epsilon_t = \epsilon_0$ when $t < \tau$ after which we linearly decrease the learning rate by $\epsilon_t = \frac{\epsilon_0}{\tau^\alpha}$. Notice that $\tau$ becomes an additional hyper-parameter of the network.
 
