@@ -56,7 +56,7 @@ Third, we find the point with the highest EI. We apply the objective function an
 
 # Bonus
 
-If you are a professor or a researcher at a University, you can use the popular method known as **Graduate Student Descent**. You can define an assignment in terms of the model you want to find hyperparameters for, and leat graduate students fiddle around with the hyperparameters until it works.
+If you are a professor or a researcher at a University, you can use the popular method known as **Graduate Student Descent**. You can define an assignment in terms of the model you want to optimize, and leat graduate students fiddle around with the hyperparameters until it works.
 
 ![A typical graduate student. You can see the pain in his eyes.](http://raw.githubusercontent.com/dshahrokhian/dshahrokhian.github.io/master/assets/kill_me.png)
 
