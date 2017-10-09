@@ -21,7 +21,7 @@ Furthermore, the learning rate is typically decreased over time. One approach is
 
 **Regularization coefficient** $\alpha$ acts as a penalty for model complexity. This complexity has nothing to do with the number of neurons and layers of the network, but with the learned weights. In general, weights close to 0 or 1 experience greater generality and avoid over-fitting the training data. There are various techniques to achieve this, such as [L1, L2](http://enhancedatascience.com/2017/07/04/machine-learning-explained-regularization/) and [Drop-out](https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf).
 
-# Manual Approaches
+# Manual Approach
 
 Hyper-parameter optimization is difficult, and there has been a lot of research done into trying to solve this problem. 
 
@@ -34,7 +34,7 @@ A technique that tries to mix both previous approaches is what is known as **Ran
 
 Yoshua Bengio explains in [his publication](https://arxiv.org/pdf/1206.5533.pdf) the practical recommendations for training deep architectures. 
 
-# Automatic Approach: Bayesian Global Optimization
+# Automatic Approach
 
 There is particular interest in automatic approaches that can optimize the hyper-parameters to the problem at hand. A good choice for achieving this is **Bayesian Optimization** [(Code)](https://github.com/fmfn/BayesianOptimization/), which has been shown to outperform other state-of-the-art techniques.
 
@@ -53,4 +53,10 @@ First, we define an objective function and an acquisition function. The objectiv
 Second, we sample points in the objective function and update the fit or posterior of the GP. As it can be seen in the Figure, the variance of the GP decreases around the known points, acting as the uncertainty measurement. On the other hand, the EI decreases in those points.
 
 Third, we find the point with the highest EI. We apply the objective function and update the GP, repeating the process with certain convergence tolerance and then returning the best solution.
+
+# Bonus
+
+If you are a professor or a researcher at a University, you can use the popular method known as **Graduate Student Descent**. You can define an assignment in terms of the model you want to find hyperparameters for, and leat graduate students fiddle around with the hyperparameters until it works.
+
+![A typical graduate student. You can see the pain in his eyes.](http://raw.githubusercontent.com/dshahrokhian/dshahrokhian.github.io/master/assets/kill_me.png)
 
