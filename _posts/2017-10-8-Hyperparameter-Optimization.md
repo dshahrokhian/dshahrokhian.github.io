@@ -38,7 +38,7 @@ Yoshua Bengio explains in [his publication](https://arxiv.org/pdf/1206.5533.pdf)
 
 There is particular interest in automatic approaches that can optimize the hyper-parameters to the problem at hand. A good choice for achieving this is **Bayesian Optimization** [(Code)](https://github.com/fmfn/BayesianOptimization/), which has been shown to outperform other state-of-the-art techniques.
 
-In recent years, Jasper \textit{et al.} explain [how to practically apply Bayesian Optimization methods for performing hyper-parameter tuning](https://papers.nips.cc/paper/4522-practical-bayesian-optimization-of-machine-learning-algorithms.pdf). This technique has been shown to be highly effective in different areas of machine learning. The results show significant speed-up with respect to other methods, and surpassed the state of the art in data sets such as CIFAR-10.
+In recent years, Jasper explained [how to practically apply Bayesian Optimization methods for performing hyper-parameter tuning](https://papers.nips.cc/paper/4522-practical-bayesian-optimization-of-machine-learning-algorithms.pdf). This technique has been shown to be highly effective in different areas of machine learning. The results show significant speed-up with respect to other methods, and surpassed the state of the art in data sets such as CIFAR-10.
 
 Optimization techniques tend to have the final goal of minimizing a given function $f(x)$, but what makes Bayesian optimization different is the fact that it constructs a probabilistic model of $f(x)$ while taking into account the uncertainty. The optimization usually works by assuming an unknown function sampled from a Gaussian process and maintains a posterior distribution of this function as observations are made.
 
